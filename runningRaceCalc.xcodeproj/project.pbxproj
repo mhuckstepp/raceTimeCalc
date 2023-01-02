@@ -8,17 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		3361EB03295FCD3E002438C1 /* runningRaceCalcApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361EB02295FCD3E002438C1 /* runningRaceCalcApp.swift */; };
-		3361EB05295FCD3E002438C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361EB04295FCD3E002438C1 /* ContentView.swift */; };
 		3361EB07295FCD3F002438C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3361EB06295FCD3F002438C1 /* Assets.xcassets */; };
 		3361EB0A295FCD3F002438C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3361EB09295FCD3F002438C1 /* Preview Assets.xcassets */; };
+		3361EB16295FCD6D002438C1 /* RaceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361EB12295FCD6C002438C1 /* RaceDetail.swift */; };
+		3361EB17295FCD6D002438C1 /* PredictRaceTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361EB13295FCD6C002438C1 /* PredictRaceTimesView.swift */; };
+		3361EB18295FCD6D002438C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361EB14295FCD6C002438C1 /* ContentView.swift */; };
+		3361EB19295FCD6D002438C1 /* Preset Races Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361EB15295FCD6C002438C1 /* Preset Races Section.swift */; };
+		3361EB1B295FCD72002438C1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361EB1A295FCD72002438C1 /* Helpers.swift */; };
+		3361EB1D295FCD99002438C1 /* RaceTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361EB1C295FCD99002438C1 /* RaceTimes.swift */; };
+		3361EB2129636ED7002438C1 /* SpeedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361EB2029636ED7002438C1 /* SpeedPicker.swift */; };
+		3361EB23296374D5002438C1 /* CustomText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361EB22296374D5002438C1 /* CustomText.swift */; };
+		3361EB25296375B6002438C1 /* PacePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361EB24296375B6002438C1 /* PacePicker.swift */; };
+		3361EB29296383EC002438C1 /* InputTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361EB28296383EC002438C1 /* InputTypes.swift */; };
+		3361EB2B296384D9002438C1 /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361EB2A296384D9002438C1 /* CustomPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3361EAFF295FCD3E002438C1 /* runningRaceCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runningRaceCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3361EB02295FCD3E002438C1 /* runningRaceCalcApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = runningRaceCalcApp.swift; sourceTree = "<group>"; };
-		3361EB04295FCD3E002438C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3361EB06295FCD3F002438C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3361EB09295FCD3F002438C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3361EB12295FCD6C002438C1 /* RaceDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceDetail.swift; sourceTree = "<group>"; };
+		3361EB13295FCD6C002438C1 /* PredictRaceTimesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictRaceTimesView.swift; sourceTree = "<group>"; };
+		3361EB14295FCD6C002438C1 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3361EB15295FCD6C002438C1 /* Preset Races Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Preset Races Section.swift"; sourceTree = "<group>"; };
+		3361EB1A295FCD72002438C1 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		3361EB1C295FCD99002438C1 /* RaceTimes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceTimes.swift; sourceTree = "<group>"; };
+		3361EB2029636ED7002438C1 /* SpeedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedPicker.swift; sourceTree = "<group>"; };
+		3361EB22296374D5002438C1 /* CustomText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomText.swift; sourceTree = "<group>"; };
+		3361EB24296375B6002438C1 /* PacePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacePicker.swift; sourceTree = "<group>"; };
+		3361EB28296383EC002438C1 /* InputTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTypes.swift; sourceTree = "<group>"; };
+		3361EB2A296384D9002438C1 /* CustomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +71,18 @@
 		3361EB01295FCD3E002438C1 /* runningRaceCalc */ = {
 			isa = PBXGroup;
 			children = (
+				3361EB2A296384D9002438C1 /* CustomPicker.swift */,
 				3361EB02295FCD3E002438C1 /* runningRaceCalcApp.swift */,
-				3361EB04295FCD3E002438C1 /* ContentView.swift */,
+				3361EB14295FCD6C002438C1 /* ContentView.swift */,
+				3361EB24296375B6002438C1 /* PacePicker.swift */,
+				3361EB22296374D5002438C1 /* CustomText.swift */,
+				3361EB1C295FCD99002438C1 /* RaceTimes.swift */,
+				3361EB28296383EC002438C1 /* InputTypes.swift */,
+				3361EB13295FCD6C002438C1 /* PredictRaceTimesView.swift */,
+				3361EB15295FCD6C002438C1 /* Preset Races Section.swift */,
+				3361EB12295FCD6C002438C1 /* RaceDetail.swift */,
+				3361EB2029636ED7002438C1 /* SpeedPicker.swift */,
+				3361EB1A295FCD72002438C1 /* Helpers.swift */,
 				3361EB06295FCD3F002438C1 /* Assets.xcassets */,
 				3361EB08295FCD3F002438C1 /* Preview Content */,
 			);
@@ -137,8 +167,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3361EB05295FCD3E002438C1 /* ContentView.swift in Sources */,
+				3361EB25296375B6002438C1 /* PacePicker.swift in Sources */,
+				3361EB16295FCD6D002438C1 /* RaceDetail.swift in Sources */,
+				3361EB1B295FCD72002438C1 /* Helpers.swift in Sources */,
+				3361EB18295FCD6D002438C1 /* ContentView.swift in Sources */,
+				3361EB17295FCD6D002438C1 /* PredictRaceTimesView.swift in Sources */,
+				3361EB19295FCD6D002438C1 /* Preset Races Section.swift in Sources */,
+				3361EB2129636ED7002438C1 /* SpeedPicker.swift in Sources */,
+				3361EB29296383EC002438C1 /* InputTypes.swift in Sources */,
 				3361EB03295FCD3E002438C1 /* runningRaceCalcApp.swift in Sources */,
+				3361EB1D295FCD99002438C1 /* RaceTimes.swift in Sources */,
+				3361EB23296374D5002438C1 /* CustomText.swift in Sources */,
+				3361EB2B296384D9002438C1 /* CustomPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
