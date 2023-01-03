@@ -33,6 +33,18 @@ class TimeInput : ObservableObject {
         return Double(hours) * 60 + Double(minutes) + Double(seconds) / 60
     }
     
+    func getSpeed() -> Double {
+        return 60 / getMinutes()
+    }
+    
+    func getSpeedString() -> String {
+        return String(format: "%.2f", getSpeed())
+    }
+    
+    func getPace() -> String {
+        return String(format: "%02d", minutes) + ":" + String(format: "%02d", seconds)
+    }
+    
     init(hours: Int = 0, minutes: Int = 0, seconds: Int = 0) {
         self.hours = hours
         self.minutes = minutes

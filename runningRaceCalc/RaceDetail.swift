@@ -26,7 +26,7 @@ struct RaceTimeRowView: View {
 }
 
 struct RaceDetail: View {
-    @ObservedObject var speed: NumberInput
+    @ObservedObject var pace: TimeInput
     var distance: Double
     
     func createSpeedArray(middleSpeed: Double) -> Array<String> {
@@ -39,15 +39,15 @@ struct RaceDetail: View {
     }
     
     var body: some View {
-        SpeedPicker(speed: speed)
+        PacePicker(pace: pace, label: "min/mile")
         Section(header: HStack {
             Text("Speed (mph)").frame(maxWidth: .infinity)
             Text("Pace (min/mile)").frame(maxWidth: .infinity)
             Text("Time").frame(maxWidth: .infinity)
-        }) {
-            List(createSpeedArray(middleSpeed: speed.getFullNum()), id: \.self) { currSpeed in
+        }.padding(.horizontal)) {
+            List(createSpeedArray(middleSpeed: pace.getSpeed()), id: \.self) { currSpeed in
                     RaceTimeRowView(currSpeed: Double(currSpeed)!, distance: distance)
                 }
-        }.navigationTitle(String(format: "%.1f", distance) + " Miles").toolbar(.hidden, for: .tabBar)
+        }.navigationTitle(String(format: "%.1f", distance) + " Miles")
     }
 }

@@ -41,13 +41,23 @@ struct PredictRaceTimesView: View {
                     })
                 }
             }
-            HStack {
-                ForEach(distances,  id: \.self) { race in
-                    Button(action: { setDistance(distanceToSet: race.distance) }) {
-                        Text(race.name).font(.system(size: 12.0))
+            Text("Set Distance").padding(.top)
+                HStack {
+                    ForEach(0..<distancesMidPoint,  id: \.self) { i in
+                        let race = distances[i]
+                        Button(action: { setDistance(distanceToSet: race.distance) }) {
+                            Text(race.name).font(.system(size: 12.0))
+                        }.buttonStyle(.bordered)
                     }
                 }
-            }.padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
+                HStack {
+                    ForEach(distancesMidPoint..<distances.count,  id: \.self) { i in
+                        let race = distances[i]
+                        Button(action: { setDistance(distanceToSet: race.distance) }) {
+                            Text(race.name).font(.system(size: 12.0))
+                        }.buttonStyle(.bordered)
+                    }
+                }
             List(distances, id: \.self) { race in
                 HStack {
                     Text("Predicted Time for \(race.name):")

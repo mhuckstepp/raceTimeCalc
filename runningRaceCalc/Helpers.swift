@@ -12,7 +12,9 @@ struct RaceObject: Hashable {
    var name: String
 }
 
-let distances: [RaceObject] = [RaceObject(distance: 1, name: "1M"), RaceObject(distance: 3.10686, name: "5K"), RaceObject(distance: 6.21371, name: "10K") , RaceObject(distance:10, name: "10M"), RaceObject(distance: 13.1094, name: "Hlf Marathon"), RaceObject(distance:20, name: "20M"),  RaceObject(distance:26.2187575, name: "Marathon"),  RaceObject(distance:50, name: "50M")]
+public var distancesMidPoint = Int(Double(distances.count) / 2)
+
+let distances: [RaceObject] = [RaceObject(distance: 1, name: "1 Mile"), RaceObject(distance: 3.10686, name: "5K"), RaceObject(distance: 6.21371, name: "10K") , RaceObject(distance:10, name: "10 Mile"), RaceObject(distance: 13.1094, name: "Half Marathon"), RaceObject(distance:20, name: "20 Mile"),  RaceObject(distance:26.2187575, name: "Marathon"),  RaceObject(distance:50, name: "50 Mile")]
 
 func getPace(speed: Double) -> String {
     if(speed == 0 ) { return "--:--"  }

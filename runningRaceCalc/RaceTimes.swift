@@ -13,10 +13,10 @@ struct RaceResult: Hashable {
 }
 
 struct RaceTimes: View {
-    @ObservedObject var speed: NumberInput
+    @ObservedObject var pace: TimeInput
 
     func createTimes(distances: Array<RaceObject>) -> Array<RaceResult> {
-        let speedToUse = speed.getFullNum()
+        let speedToUse = pace.getSpeed()
         guard (speedToUse != 0)  else { return [RaceResult(name: "N/A", time: "no speed given")] }
         return distances.map { race in
             let distance = race.distance
@@ -28,9 +28,9 @@ struct RaceTimes: View {
     
     var body: some View {
         VStack {
-            SpeedPicker(speed: speed)
-        Text("Speed = " + String(speed.getFullNum()) + " MPH").fontWeight(.bold)
-            Text("Pace = " + getPace(speed: speed.getFullNum())  + " Mins/Mile").fontWeight(.bold)
+            PacePicker(pace: pace, label: "min/mile")
+        Text("Speed = " + pace.getSpeedString() + " MPH").fontWeight(.bold)
+            Text("Pace = " + pace.getPace()  + " Mins/Mile").fontWeight(.bold)
             ForEach(createTimes(distances: distances), id: \.self) { race in
                 Text(race.name + " - " + race.time).padding()
                     }
