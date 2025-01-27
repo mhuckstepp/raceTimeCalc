@@ -7,30 +7,34 @@
 
 import SwiftUI
 
-struct PacePicker: View {
+struct TimeOrPacePicker: View {
     @ObservedObject var pace: TimeInput
-    var showHours: Bool = false
-    var label: String = ""
-    
+    var useTimeNotPace: Bool = false
+    var label: String?
+
     func getRange() -> Range<Int> {
-        if showHours {
+        if useTimeNotPace {
             return 0..<60
         }
         return 3..<25
     }
-    
-    
-    
+
     var body: some View {
         HStack {
-            if showHours {
+            if useTimeNotPace {
                 CustomPicker(valueBinding: $pace.hours, range: 0..<15, label: "Pace")
                 Text(":")
             }
-            CustomPicker(valueBinding: $pace.minutes, range: getRange(), label: "Pace")
+            CustomPicker(
+                valueBinding: $pace.minutes,
+                range: getRange(),
+                label: "Pace"
+            )
             Text(":")
             CustomPicker(valueBinding: $pace.seconds, range: 0..<60)
-            Text(label)
+            if let label {
+                Text(label)
+            }
         }
     }
 }

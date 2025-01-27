@@ -28,7 +28,7 @@ struct RaceTimes: View {
     
     var body: some View {
         VStack {
-            PacePicker(pace: pace, label: "min/mile")
+            TimeOrPacePicker(pace: pace, label: "min/mile")
         Text("Speed = " + pace.getSpeedString() + " MPH").fontWeight(.bold)
             Text("Pace = " + pace.getPace()  + " Mins/Mile").fontWeight(.bold)
             ForEach(createTimes(distances: distances), id: \.self) { race in

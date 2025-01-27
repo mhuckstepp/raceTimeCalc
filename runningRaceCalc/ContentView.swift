@@ -11,19 +11,20 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var speed = NumberInput(main: 7, decimal: 50, baseForDecimal: 100)
     @StateObject private var pace = TimeInput(minutes: 8, seconds: 0)
-    @State private var showPace = 0
+    @State private var showPace: Bool = false
 
 
     var body: some View {
         NavigationView {
             VStack {
                 Picker("Select picker style", selection: $showPace) {
-                    Text("Pace").tag(0)
-                    Text("Speed").tag(1)
+                    Text("Pace").tag(true)
+                    Text("Speed").tag(false)
                 }.pickerStyle(.segmented).padding(.horizontal).padding(.bottom, 30)
-                if showPace == 0  {
+                
+                if showPace  {
                     CustomText(text: "Calulate your speed based on pace")
-                    PacePicker(pace: pace, label: "min/mile")
+                    TimeOrPacePicker(pace: pace, label: "min/mile")
                     Text("Speed = " + String(pace.getSpeedString()) + " MPH")
                 } else {
                     Group {
@@ -33,10 +34,14 @@ struct ContentView: View {
                     }
                 }
                 NavigationLink(destination: RaceTimes(pace: pace)) {
-                    Text("Check All Race Times Based on Speed")
-                }.buttonStyle(.borderedProminent)
+                    Text("Check All Race Times Based on \(showPace ? "pace" : "speed")")
+                }
+                .buttonStyle(.borderedProminent)
+
                 Divider().padding(.top)
+
                 PresetRaceSection(pace: pace)
+                
                 Divider().padding(.bottom)
                 NavigationLink(destination: PredictRaceTimesView()) {
                     Text("Predict Race Times")

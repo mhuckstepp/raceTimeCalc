@@ -39,7 +39,7 @@ struct RaceDetail: View {
     }
     
     var body: some View {
-        PacePicker(pace: pace, label: "min/mile")
+        TimeOrPacePicker(pace: pace, label: "min/mile")
         Section(header: HStack {
             Text("Speed (mph)").frame(maxWidth: .infinity)
             Text("Pace (min/mile)").frame(maxWidth: .infinity)

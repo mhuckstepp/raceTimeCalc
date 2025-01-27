@@ -16,7 +16,6 @@ struct PredictRaceTimesView: View {
     @State private var knownDistance: String = "0"
     @FocusState private var distanceIsFocused: Bool
 
-    
     func predictTime(distanceToPredict: Double) -> String {
         return convertTimeInMinutesToString(timeInMinutes: timeToComplete.getMinutes() * pow(distanceToPredict / stringToNum(possNum: knownDistance), 1.06))
     }
@@ -30,24 +29,29 @@ struct PredictRaceTimesView: View {
     var body: some View {
         VStack {
             Text("Known/Existing Time").font(.callout)
-                Text("(Hours : Mins : Seconds)")
-            PacePicker(pace: timeToComplete, showHours: true)
+            Text("(Hours : Mins : Seconds)")
+            TimeOrPacePicker(
+                pace: timeToComplete,
+                useTimeNotPace: true
+            )
             VStack{
                 Text("Distance (miles)")
                 HStack {
-                    TextField("Distance", text: $knownDistance).keyboardType(.numberPad).frame(width: 120).textFieldStyle(.roundedBorder).focused($distanceIsFocused).multilineTextAlignment(.center)
-                    Button("Submit", action: {
-                        distanceIsFocused = false
-                    })
+                    TextField("Distance", text: $knownDistance)
+                        .keyboardType(.numberPad)
+                        .frame(width: 120)
+                        .textFieldStyle(.roundedBorder)
+                        .multilineTextAlignment(.center)
                 }
             }
             Text("Set Distance").padding(.top)
                 HStack {
                     ForEach(0..<distancesMidPoint,  id: \.self) { i in
                         let race = distances[i]
-                        Button(action: { setDistance(distanceToSet: race.distance) }) {
-                            Text(race.name).font(.system(size: 12.0))
-                        }.buttonStyle(.bordered)
+                        Button(race.name) {
+                            setDistance(distanceToSet: race.distance)
+                        }
+                        .buttonStyle(.bordered)
                     }
                 }
                 HStack {
@@ -60,8 +64,9 @@ struct PredictRaceTimesView: View {
                 }
             List(distances, id: \.self) { race in
                 HStack {
-                    Text("Predicted Time for \(race.name):")
-                    Text(predictTime(distanceToPredict: race.distance)).frame(maxWidth: .infinity, alignment: .trailing)
+                    Text("\(race.name):")
+                    Text(predictTime(distanceToPredict: race.distance))
+                        .frame(maxWidth: .infinity, alignment: .trailing)
                 }
             }
         }
